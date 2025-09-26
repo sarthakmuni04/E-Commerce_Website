@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Trash, Star } from "lucide-react";
+import { Trash } from "lucide-react";
 import { useProductStore } from "../stores/useProductStore";
 
 const ProductsList = () => {
-	const { deleteProduct, toggleFeaturedProduct, products } = useProductStore();
+    const { deleteProduct, products } = useProductStore();
 
 	console.log("products", products);
 
@@ -40,12 +40,6 @@ const ProductsList = () => {
 							scope='col'
 							className='px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider'
 						>
-							Featured
-						</th>
-						<th
-							scope='col'
-							className='px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider'
-						>
 							Actions
 						</th>
 					</tr>
@@ -73,16 +67,6 @@ const ProductsList = () => {
 							</td>
 							<td className='px-6 py-4 whitespace-nowrap'>
 								<div className='text-sm text-gray-300'>{product.category}</div>
-							</td>
-							<td className='px-6 py-4 whitespace-nowrap'>
-								<button
-									onClick={() => toggleFeaturedProduct(product._id)}
-									className={`p-1 rounded-full ${
-										product.isFeatured ? "bg-yellow-400 text-gray-900" : "bg-gray-600 text-gray-300"
-									} hover:bg-yellow-500 transition-colors duration-200`}
-								>
-									<Star className='h-5 w-5' />
-								</button>
 							</td>
 							<td className='px-6 py-4 whitespace-nowrap text-sm font-medium'>
 								<button

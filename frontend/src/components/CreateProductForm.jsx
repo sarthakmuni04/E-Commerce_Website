@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { PlusCircle, Upload, Loader } from "lucide-react";
 import { useProductStore } from "../stores/useProductStore";
 
-const categories = ["jeans", "t-shirts", "shoes", "glasses", "jackets", "suits", "bags"];
+const categories = ["mithai", "chocolate", "dry-fruit", "bengali", "special"];
 
 const CreateProductForm = () => {
 	const [newProduct, setNewProduct] = useState({
@@ -46,12 +46,12 @@ const CreateProductForm = () => {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8 }}
 		>
-			<h2 className='text-2xl font-semibold mb-6 text-emerald-300'>Create New Product</h2>
+            <h2 className='text-2xl font-semibold mb-6 text-emerald-300'>Add New Sweet</h2>
 
 			<form onSubmit={handleSubmit} className='space-y-4'>
 				<div>
 					<label htmlFor='name' className='block text-sm font-medium text-gray-300'>
-						Product Name
+                        Sweet Name
 					</label>
 					<input
 						type='text'
