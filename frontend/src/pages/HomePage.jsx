@@ -14,11 +14,11 @@ const categories = [
 ];
 
 const HomePage = () => {
-    const { fetchAllProducts, products, loading } = useProductStore();
+	const { fetchFeaturedProducts, products, isLoading } = useProductStore();
 
-    useEffect(() => {
-        fetchAllProducts();
-    }, [fetchAllProducts]);
+	useEffect(() => {
+		fetchFeaturedProducts();
+	}, [fetchFeaturedProducts]);
 
 	return (
 		<div className='relative min-h-screen text-white overflow-hidden'>
@@ -36,7 +36,7 @@ const HomePage = () => {
 					))}
 				</div>
 
-                {!loading && products.length > 0 && <FeaturedProducts featuredProducts={products} />}
+				{!isLoading && products.length > 0 && <FeaturedProducts featuredProducts={products} />}
 			</div>
 		</div>
 	);
